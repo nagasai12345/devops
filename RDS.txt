@@ -1,0 +1,71 @@
+admin
+w6I4TJbJAvV4B41ZvE72
+AWS RDS
+sudo apt-get update
+sudo apt install mysql-server
+mysql -h database-1.ch4yuf9u3zmj.us-east-1.rds.amazonaws.com admin -p
+top command to see linux all commands
+exit
+pwd
+show databases
+create databse customerend;
+create database customers;
+show databases
+use customers;
+create table donors (id int AUTO_INCREMENT primary key, fname varchar (255) NOT NULL ,lname varchar (255) NOT NULL , mobileno BIGINT UNIQUE, city varchar (255) NOT NULL, bfrom date, bto date, dob date, bloodgroup varchar (255) NOT NULL) ;
+show tables;
+describe donors
+
+INSERT INTO 'donors' ('fname' , 'lname' , 'mobileno' , 'bfrom' , 'bto' , 'dob' , bloodgroup') VALUES
+('Srikanth' , 'Korveni' , '9000736060' , 'pune' , '2022-09-28' , '2022-12-28' , '1992-08-15' , 'o_Positive') ,
+('ganesh' , 'Korveni' , '9000736060' , 'pune' , '2022-09-28' , '2022-12-28' , '1992-08-15' , 'o_Positive') ,
+('mahesh' , 'Korveni' , '9000736060' , 'pune' , '2022-09-28' , '2022-12-28' , '1992-08-15' , 'o_Positive') ,
+('subu' , 'Korveni' , '9000736060' , 'pune' , '2022-09-28' , '2022-12-28' , '1992-08-15' , 'o_Positive') ,
+('sravya' , 'Korveni' , '9000736060' , 'pune' , '2022-09-28' , '2022-12-28' , '1992-08-15' , 'o_Positive') ,
+('Sushma' , 'Korveni' , '9000736060' , 'pune' , '2022-09-28' , '2022-12-28' , '1992-08-15' , 'o_Positive') ,
+('prasad' , 'Korveni' , '9000736060' , 'pune' , '2022-09-28' , '2022-12-28' , '1992-08-15' , 'o_Positive') ,
+('krishna' , 'Korveni' , '9000736060' , 'pune' , '2022-09-28' , '2022-12-28' , '1992-08-15' , 'o_Positive') ;
+
+select * from donors;
+drop table donors;
+show databses
+
+
+database-2.ch4yuf9u3zmj.us-east-1.rds.amazonaws.com
+3306
+
+
+sudo apt update
+sudo apt install mysql-server
+sudo systemctl status mysql
+sudo mysql
+mysql -u root -p
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'admin12345678';
+FLUSH PRIVILEGES;
+CREATE DATABASE mysql_test1;
+
+
+CREATE TABLE shop (
+    article INT UNSIGNED  DEFAULT '0000' NOT NULL,
+    dealer  CHAR(20)      DEFAULT ''     NOT NULL,
+    price   DECIMAL(16,2) DEFAULT '0.00' NOT NULL,
+    PRIMARY KEY(article, dealer));
+INSERT INTO shop VALUES
+    (1,'A',3.45),(1,'B',3.99),(2,'A',10.99),(3,'B',1.45),
+    (3,'C',1.69),(3,'D',1.25),(4,'D',19.95);
+
+After issuing the statements, the table should have the following contents:
+
+SELECT * FROM shop ORDER BY article;
++---------+--------+-------+
+| article | dealer | price |
++---------+--------+-------+
+|       1 | A      |  3.45 |
+|       1 | B      |  3.99 |
+|       2 | A      | 10.99 |
+|       3 | B      |  1.45 |
+|       3 | C      |  1.69 |
+|       3 | D      |  1.25 |
+|       4 | D      | 19.95 |
++---------+--------+-------+
+

@@ -1,0 +1,118 @@
+diffenrence between 
+      decloritive           scripted
+        more code            less code
+         pipeline                node
+         stages                    stage
+         steps                      no steps         
+scripted pipeline vs declarative pipeline
+scrip 1
+node {
+stage('stage1') {
+    sh 'echo hai all'
+}
+}
+pipeline2
+pipeline {
+    agent any
+    stages {
+        stage ('nagesh') {
+            steps {
+                sh 'echo hi all welcome'
+            }
+        }
+    }
+}
+script 3
+node {
+stage('stage1') {
+    sh '''
+       touch file3
+       mkdir dir2
+       mv file3 file4
+       lscpu
+       lsmeminfo
+    '''
+}
+}
+cd /var/lib/jenkins/workspace/pipeline1
+script3
+node {
+stage('stage1') {
+    sh 'touch file2'
+    sh 'mkdir dir1'
+}
+}
+script4
+pipeline {
+    agent any
+    stages {
+        stage ('stage1') {
+            steps {
+                git 'https://github.com/nagswe/swigg2.git'
+            }
+         }
+        stage ('stage2') {
+            steps {
+                sh 'echo hi all welcome'
+            }
+         }
+      }
+}
+script 5
+pipeline {
+    agent any
+    stages {
+        stage ('stage1') {
+            steps {
+                git 'https://github.com/nagswe/swigg2.git'
+                sh 'touch file5'
+            }
+         }
+        stage ('stage2') {
+            steps {
+                sh 'echo "integration of git with jenkins is done"'
+                sh 'mkdir dir6'
+            }
+         }
+      }
+}
+script6
+pipeline {
+agent any
+stages {
+stage ('build') {
+input{
+message "Press Ok to continue"
+submitter "user1,user2"
+parameters {
+string(name:'username', defaultValue: 'user', description: 'Username of the user pressing
+Ok')
+}
+}
+steps {
+echo "User: ${username} said Ok."
+}
+}
+}
+}
+post
+ALWAYS : WILL PRINT EVEN IF IT FAILS OR SUCCES
+FAILURE: WILL PRINT WHEN BUILD GOT FAILED
+SUCCESS: WILL PRINT WHEN BUILD GOT SUCCESS
+
+script6
+
+pipeline {
+    agent any
+    stages {
+        stage ('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+    post {
+          always {
+                sh 'echo "this message is printed"'
+}
+

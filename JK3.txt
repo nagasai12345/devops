@@ -1,0 +1,41 @@
+CHOICE PARAMETERS
+name:client 
+choices:swiggy
+              zomato
+               uber
+description:select the project you want to build
+name :DB
+choices : yes 
+                no
+NAME:BRANCHES
+CHOICES : MASTER
+                     RELEASE
+                     QA
+                     DEV
+string parameter
+user input
+enter your input
+multilinestring
+multilineinput
+enter your values
+boolean parameter
+PRIORTY
+CHOICE PARAMETER
+PRIORTY : HIGH LOW MEDIUM
+VARIABLES
+name=nagesh
+location=kakinada
+
+echo "hi my name is ${name} and my locations is ${location}"
+echo " iam working for ${client}
+go to manage jenkins and select system configure and select global proper and there is environvariable
+echo "this build id is ${JOB_NAME}"
+the node id used for build id ${NODE_NAME}"
+the jenkins url is ${JENKINS_URL}"
+THROTTLE BUILD
+cd /var/lib/jenkins/workspace/
+in real time go to advanced 
+custom workspace
+
+                     
+

@@ -1,0 +1,21 @@
+sudo su -
+apt update && apt install -y unzip jq net-tools
+clear
+jq
+unzip
+aws
+aws cli ubuntu 20.04
+after install
+aws --version
+create file by vim editor
+aws ec2 describe-vpcs | jq
+aws ec2 describe-vpcs | jq ".vpcs[].vpcid"
+aws ec2 describe-vpcs | jq ".vpcs[].vpcid" -r
+USEAST1=$(aws ec2 describe-vpcs | jq ".vpcs[].vpcid" -r)
+echo $USEAST1
+for vpc in $USEAST1[@]
+do
+the vpc id is $VPC
+sleep
+done
+for VPC in $USEAST1[@]; do echo "The VPC id is $VPC" ; sleep 1; done

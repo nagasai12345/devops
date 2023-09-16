@@ -1,0 +1,57 @@
+controler 13.57.202.125
+prod 54.153.74.128
+dev 52.53.254.156
+sudo apt-get update
+sudo apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
+ansible --version
+sudo vi /etc/ansible/hosts
+and give public ip save and quit
+https://github.com/ansible/ansible/blob/stable-2.9/examples/ansible.cfg
+sudo vi /etc/ansible/ansible.cfg
+Uncomment below lines remove yash symbols
+inventory
+sudo
+and after add user   sudo adduser ansible in both machines
+sudo vi /etc/sudoers
+members of the root privileges
+copy this command %ansible  ALL=(ALL) NOPASSWD:ALL
+:wq!
+log in to ansible user su - ansible in both machines
+sudo apt-get update
+and exit to ubuntu user
+and this commands
+sudo vi /etc/ssh/sshd_config
+and change remove yash symbol in publickey authentication
+and change remove yash symbol in password authentication no replaces with yes
+these above process do in the node1
+after then sudo service ssh restart
+sudo service ssh status these steps in both the systems
+and switch to ansible user
+su - ansible
+ssh-copy-id ansible@privateip
+hostname -i in nodes systems
+exit from multiexc
+go to controller
+ssh-copy-id ansible@privateip2
+check ssh private ip
+ls -al
+cd .ssh
+ansible all --list-hosts
+ansible all[1] --list-hosts
+ansible dev --list-hosts
+ansible prod --list-hosts
+ansible prod[0],dev[0] --list-hosts
+ansible all[1:3] --list-hosts
+bottom to second node ansible all[-2] --list-hosts
+bottom to first node ansible all[-1] --list-hosts
+ansible all -a "ls"
+ansible all -a "touch file1"
+ansible all -a "sudo useradd nagesh"
+ansible all -a "cat /etc/passwd"
+ansible prod -b -a "useradd devops"
+ansible all -ba "sudo apt install tree"
+ansible all -ba "tree --version"
+ansible all -ba "tree"
+ansible all -ba "sudo apt remove tree"
