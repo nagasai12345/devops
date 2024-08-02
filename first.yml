@@ -20,7 +20,7 @@
 - hosts: all
   become: yes
   tasks:
-    -name: install git
+    -name: install git..
      raw: yum install git -y
 
 
